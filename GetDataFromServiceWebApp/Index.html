@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+   <!-- Burada Jquery ile Web Api Servisimize Ajax istediğinde Buşunacağız Servis'ten verileri çekeceğiz -->
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script>
+        $(function ()
+        {
+            $("#btnVerileriCek").click(function ()
+            {
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:8091/api/city",
+                    success: function (response)
+                    {
+                        console.log(response);
+
+                    }
+                });
+
+            });
+        });
+    </script>
+    <title></title>
+</head>
+<body>
+  <a id="btnVerileriCek">Verileri Çek</a>
+</body>
+</html>
